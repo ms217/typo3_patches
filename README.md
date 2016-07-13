@@ -1,5 +1,5 @@
 # TYPO3 Community Patches
-This project aims to collect and to provide at first place security patches of TYPO3 versions where *the official support has ended.*
+This project aims to collect and to provide at first place security patches of TYPO3 versions where **the official support has ended.**
 However, you may also find here in some rare cases non-security patches (f.e. bugfixes) that may fix certain bugs.
 
 Although some of these patches were directly published by the TYPO3 developer team, other patches might come from community members and the functionality, quality or security impact couldn't be tested in every aspect.
