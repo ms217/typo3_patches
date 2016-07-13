@@ -1,0 +1,13 @@
+diff --git a/typo3/contrib/swiftmailer/classes/Swift/Transport/SendmailTransport.php b/typo3/contrib/swiftmailer/classes/Swift/Transport/SendmailTransport.php
+index 1ed74e0..673a63f 100755
+--- a/typo3/contrib/swiftmailer/classes/Swift/Transport/SendmailTransport.php
++++ b/typo3/contrib/swiftmailer/classes/Swift/Transport/SendmailTransport.php
+@@ -112,7 +112,7 @@
+       
+       if (false === strpos($command, ' -f'))
+       {
+-        $command .= ' -f' . $this->_getReversePath($message);
++        $command .= ' -f' . escapeshellarg($this->_getReversePath($message));
+       }
+       
+       $buffer->initialize(array_merge($this->_params, array('command' => $command)));
