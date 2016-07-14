@@ -16,7 +16,7 @@ These patches are distributed in the hope that they will be useful, but WITHOUT 
 * [TYPO3-CORE-SA-2016-013: Missing Access Check in TYPO3 CMS](https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2016-013/)
  * 4.3/cve-2016-5091.diff
 
-* Add PHP-FPM support to TYPO3 4.3 **Non-Security Community-Patch**
+* **Add PHP-FPM support to TYPO3 4.3 (Non-Security - Community-Patch)**
  * 4.3/typo3_php-fpm_4-3.diff
 
 ### 4.4
