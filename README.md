@@ -1,11 +1,12 @@
 # TYPO3 Community Patches
-This project aims to collect and to provide at first place security patches of TYPO3 versions where **the official support has ended.**
-However, you may also find here in some rare cases non-security patches that may fix certain bugs.
+This project aims to collect and to provide at first place security patches for TYPO3 versions where **the official support has ended.**
+However, you may also find here in some rare cases non-security patches that may fix certain bugs or may introduce a backported feature from a newer TYPO3 Version.
 
 Although some of these patches were directly published by the TYPO3 developer team, other patches might come from community members and the functionality, quality or security impact couldn't be tested in every aspect.
 
-These patches are distributed in the hope that they will be useful, but WITHOUT ANY WARRANTY!
+These patches are distributed in the hope that they will be useful, **but WITHOUT ANY WARRANTY!**
 
+If you still have a website using a version of TYPO3 that reached End-of-Life (EOL) then you are highly adviced to upgrade to a currently maintained LTS version!
 
 ## Patch Index
 
