@@ -1,13 +1,13 @@
 # TYPO3 Community Patches
 This project aims to collect and to provide at first place security patches of TYPO3 versions where **the official support has ended.**
-However, you may also find here in some rare cases non-security patches (f.e. bugfixes) that may fix certain bugs.
+However, you may also find here in some rare cases non-security patches that may fix certain bugs.
 
 Although some of these patches were directly published by the TYPO3 developer team, other patches might come from community members and the functionality, quality or security impact couldn't be tested in every aspect.
 
 These patches are distributed in the hope that they will be useful, but WITHOUT ANY WARRANTY!
 
 
-## CVE Patch Index
+## Patch Index
 
 ### 4.3
 * [TYPO3-CORE-SA-2015-001: Authentication Bypass in TYPO3 CMS 4.5](https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-001/)
@@ -15,6 +15,9 @@ These patches are distributed in the hope that they will be useful, but WITHOUT 
 
 * [TYPO3-CORE-SA-2016-013: Missing Access Check in TYPO3 CMS](https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2016-013/)
  * 4.3/cve-2016-5091.diff
+
+* Add PHP-FPM support to TYPO3 4.3 **Non-Security Community-Patch**
+ * 4.3/typo3_php-fpm_4-3.diff
 
 ### 4.4
 * [TYPO3-CORE-SA-2015-001: Authentication Bypass in TYPO3 CMS 4.5](https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-001/)
