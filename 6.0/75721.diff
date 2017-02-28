@@ -1,0 +1,26 @@
+diff --git a/typo3/sysext/extensionmanager/Classes/Utility/Parser/XmlParserFactory.php b/typo3/sysext/extensionmanager/Classes/Utility/Parser/XmlParserFactory.php
+index fdb851c..5c71603 100644
+--- a/typo3/sysext/extensionmanager/Classes/Utility/Parser/XmlParserFactory.php
++++ b/typo3/sysext/extensionmanager/Classes/Utility/Parser/XmlParserFactory.php
+@@ -53,12 +53,12 @@ class XmlParserFactory {
+ 	 */
+ 	static protected $parsers = array(
+ 		'extension' => array(
++                        'TYPO3\\CMS\\Extensionmanager\\Utility\\Parser\\ExtensionXmlPushParser' => 'ExtensionXmlPushParser.php'
+ 			'TYPO3\\CMS\\Extensionmanager\\Utility\\Parser\\ExtensionXmlPullParser' => 'ExtensionXmlPullParser.php',
+-			'TYPO3\\CMS\\Extensionmanager\\Utility\\Parser\\ExtensionXmlPushParser' => 'ExtensionXmlPushParser.php'
+ 		),
+ 		'mirror' => array(
++                        'TYPO3\\CMS\\Extensionmanager\\Utility\\Parser\\MirrorXmlPushParser' => 'MirrorXmlPushParser.php'
+ 			'TYPO3\\CMS\\Extensionmanager\\Utility\\Parser\\MirrorXmlPullParser' => 'MirrorXmlPullParser.php',
+-			'TYPO3\\CMS\\Extensionmanager\\Utility\\Parser\\MirrorXmlPushParser' => 'MirrorXmlPushParser.php'
+ 		)
+ 	);
+ 
+@@ -93,4 +93,4 @@ class XmlParserFactory {
+ }
+ 
+ 
+-?>
+\ No newline at end of file
++?>

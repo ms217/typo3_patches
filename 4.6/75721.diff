@@ -1,0 +1,26 @@
+diff --git a/typo3/sysext/em/classes/parser/class.tx_em_parser_xmlparserfactory.php b/typo3/sysext/em/classes/parser/class.tx_em_parser_xmlparserfactory.php
+index ac17319..111f128 100644
+--- a/typo3/sysext/em/classes/parser/class.tx_em_parser_xmlparserfactory.php
++++ b/typo3/sysext/em/classes/parser/class.tx_em_parser_xmlparserfactory.php
+@@ -63,12 +63,12 @@ class tx_em_Parser_XmlParserFactory {
+ 	 */
+ 	static protected $parsers = array(
+ 		'extension' => array(
++                        'tx_em_parser_extensionxmlpushparser' => 'class.tx_em_parser_extensionxmlpushparser.php',
+ 			'tx_em_parser_extensionxmlpullparser' => 'class.tx_em_parser_extensionxmlpullparser.php',
+-			'tx_em_parser_extensionxmlpushparser' => 'class.tx_em_parser_extensionxmlpushparser.php',
+ 		),
+ 		'mirror' => array(
++                        'tx_em_parser_mirrorxmlpushparser' => 'class.tx_em_parser_mirrorxmlpushparser.php',
+ 			'tx_em_parser_mirrorxmlpullparser' => 'class.tx_em_parser_mirrorxmlpullparser.php',
+-			'tx_em_parser_mirrorxmlpushparser' => 'class.tx_em_parser_mirrorxmlpushparser.php',
+ 		),
+ 	);
+ 
+@@ -109,4 +109,4 @@ if (defined('TYPO3_MODE') && isset($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLA
+ 	include_once($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['typo3/sysext/em/classes/parser/class.tx_em_parser_xmlparserfactory.php']);
+ }
+ 
+-?>
+\ No newline at end of file
++?>

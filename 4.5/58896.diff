@@ -1,0 +1,18 @@
+diff --git a/typo3/sysext/dbal/class.ux_t3lib_sqlparser.php b/typo3/sysext/dbal/class.ux_t3lib_sqlparser.php
+index 6157844..89b895f 100644
+--- a/typo3/sysext/dbal/class.ux_t3lib_sqlparser.php
++++ b/typo3/sysext/dbal/class.ux_t3lib_sqlparser.php
+@@ -222,6 +222,13 @@ class ux_t3lib_sqlparser extends t3lib_sqlparser {
+         * @return      string          Output string
+         */
+        protected function compileAddslashes($str) {
++               // DatabaseConnection::quoteWhereClause() returns an unmodified where clause in native mode,
++               // escaping of special characters needs to be done here.
++               if ((string)$this->databaseConnection->handlerCfg[$this->databaseConnection->lastHandlerKey]['type'] === 'native') {
++                       return parent::compileAddslashes($str);
++               }
++
++               // Return unmodified value, DBMS specific escaping is handled in DatabaseConnection::quoteWhereClause()
+                return $str;
+        }
+
