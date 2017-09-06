@@ -7,6 +7,10 @@ Although some of these patches were directly published by the TYPO3 developer te
 These patches are distributed in the hope that they will be useful, **but WITHOUT ANY WARRANTY!**
 
 If you still have a website running a version of TYPO3 that reached End-of-Life (EOL) then you are strongly encouraged to upgrade to an actively maintained Long Term Support (LTS) version of TYPO3!
+<<<<<<< HEAD
+=======
+
+>>>>>>> 210da60845279965cd357c635da11bdfa207361f
 
 
 

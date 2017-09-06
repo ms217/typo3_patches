@@ -1,0 +1,41 @@
+diff --git a/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php b/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php
+index 7ce2ed0..6e9a9e2 100644
+--- a/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php
++++ b/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php
+@@ -104,9 +104,9 @@ class SystemEnvironmentBuilder {
+ 		define('CRLF', CR . LF);
+ 
+ 		// Security related constant: Default value of fileDenyPattern
+-		define('FILE_DENY_PATTERN_DEFAULT', '\\.(php[3-6]?|phpsh|phtml)(\\..*)?$|^\\.htaccess$');
++		define('FILE_DENY_PATTERN_DEFAULT', '\\.(php[3-6]?|phpsh|phtml|pht)(\\..*)?$|^\\.htaccess$');
+ 		// Security related constant: List of file extensions that should be registered as php script file extensions
+-		define('PHP_EXTENSIONS_DEFAULT', 'php,php3,php4,php5,php6,phpsh,inc,phtml');
++		define('PHP_EXTENSIONS_DEFAULT', 'php,php3,php4,php5,php6,phpsh,inc,phtml,pht');
+ 
+ 		// Operating system identifier
+ 		// Either "WIN" or empty string
+diff --git a/typo3/sysext/core/Tests/Unit/Core/SystemEnvironmentBuilderTest.php b/typo3/sysext/core/Tests/Unit/Core/SystemEnvironmentBuilderTest.php
+index af9efad..fe9e35d 100644
+--- a/typo3/sysext/core/Tests/Unit/Core/SystemEnvironmentBuilderTest.php
++++ b/typo3/sysext/core/Tests/Unit/Core/SystemEnvironmentBuilderTest.php
+@@ -42,7 +42,7 @@ class SystemEnvironmentBuilderTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+ 	public function fileDenyPatternMatchesPhpExtensionDataProvider() {
+ 		$fileName = $this->getUniqueId('filename');
+ 		$data = array();
+-		$phpExtensions = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', 'php,php3,php4,php5,php6,phpsh,phtml', TRUE);
++		$phpExtensions = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', 'php,php3,php4,php5,php6,phpsh,phtml,pht', TRUE);
+ 		foreach ($phpExtensions as $extension) {
+ 			$data[] = array($fileName . '.' . $extension);
+ 			$data[] = array($fileName . '.' . $extension . '.txt');
+diff --git a/typo3/sysext/core/Tests/Unit/Utility/GeneralUtilityTest.php b/typo3/sysext/core/Tests/Unit/Utility/GeneralUtilityTest.php
+index bb519d6..83fe9f1 100644
+--- a/typo3/sysext/core/Tests/Unit/Utility/GeneralUtilityTest.php
++++ b/typo3/sysext/core/Tests/Unit/Utility/GeneralUtilityTest.php
+@@ -4314,6 +4314,7 @@ class GeneralUtilityTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+ 			'Regular .php3 file' => array('file.php3'),
+ 			'Regular .phpsh file' => array('file.phpsh'),
+ 			'Regular .phtml file' => array('file.phtml'),
++			'Regular .pht file' => array('file.pht'), 
+ 			'PHP file in the middle' => array('file.php.txt'),
+ 			'.htaccess file' => array('.htaccess'),
+ 		);
