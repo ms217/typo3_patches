@@ -1,0 +1,13 @@
+diff --git a/t3lib/config_default.php b/t3lib/config_default.php
+index 5f76424..c59a912 100644
+--- a/t3lib/config_default.php
++++ b/t3lib/config_default.php
+@@ -719,7 +719,7 @@ define('TYPO3_copyright_year', '1998-2013');
+ 	// Handle $GLOBALS['TYPO3_CONF_VARS']['HTTP']['userAgent']. We can not set the default above
+ 	// because TYPO3_version is not yet defined.
+ if (empty($GLOBALS['TYPO3_CONF_VARS']['HTTP']['userAgent'])) {
+-	$GLOBALS['TYPO3_CONF_VARS']['HTTP']['userAgent'] = 'TYPO3/' . TYPO3_version;
++	$GLOBALS['TYPO3_CONF_VARS']['HTTP']['userAgent'] = 'TYPO3';
+ }
+ define('TYPO3_user_agent', 'User-Agent: '. $GLOBALS['TYPO3_CONF_VARS']['HTTP']['userAgent']);
+ 

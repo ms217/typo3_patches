@@ -1,0 +1,36 @@
+diff --git a/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php b/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php
+index b144e99..b203459 100644
+--- a/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php
++++ b/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php
+@@ -103,9 +103,9 @@ class SystemEnvironmentBuilder {
+ 		define('CRLF', CR . LF);
+ 
+ 		// Security related constant: Default value of fileDenyPattern
+-		define('FILE_DENY_PATTERN_DEFAULT', '\\.(php[3-6]?|phpsh|phtml)(\\..*)?$|^\\.htaccess$');
++		define('FILE_DENY_PATTERN_DEFAULT', '\\.(php[3-6]?|phpsh|phtml|pht)(\\..*)?$|^\\.htaccess$');
+ 		// Security related constant: List of file extensions that should be registered as php script file extensions
+-		define('PHP_EXTENSIONS_DEFAULT', 'php,php3,php4,php5,php6,phpsh,inc,phtml');
++		define('PHP_EXTENSIONS_DEFAULT', 'php,php3,php4,php5,php6,phpsh,inc,phtml,pht');
+ 
+ 		// List of extensions required to run the core
+ 		define('REQUIRED_EXTENSIONS', 'core,backend,frontend,cms,lang,sv,extensionmanager,recordlist,extbase,fluid,cshmanual,install');
+diff --git a/typo3/sysext/core/Tests/Unit/Core/SystemEnvironmentBuilderTest.php b/typo3/sysext/core/Tests/Unit/Core/SystemEnvironmentBuilderTest.php
+index b585c10..7ea07af 100644
+--- a/typo3/sysext/core/Tests/Unit/Core/SystemEnvironmentBuilderTest.php
++++ b/typo3/sysext/core/Tests/Unit/Core/SystemEnvironmentBuilderTest.php
+@@ -64,7 +64,7 @@ class SystemEnvironmentBuilderTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+ 	public function fileDenyPatternMatchesPhpExtensionDataProvider() {
+ 		$fileName = uniqid('filename');
+ 		$data = array();
+-		$phpExtensions = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', 'php,php3,php4,php5,php6,phpsh,phtml', TRUE);
++		$phpExtensions = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', 'php,php3,php4,php5,php6,phpsh,phtml,pht', TRUE);
+ 		foreach ($phpExtensions as $extension) {
+ 			$data[] = array($fileName . '.' . $extension);
+ 			$data[] = array($fileName . '.' . $extension . '.txt');
+@@ -281,4 +281,4 @@ class SystemEnvironmentBuilderTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+ 
+ }
+ 
+-?>
+\ No newline at end of file
++?>

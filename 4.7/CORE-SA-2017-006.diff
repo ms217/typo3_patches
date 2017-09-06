@@ -1,0 +1,20 @@
+diff --git a/t3lib/config_default.php b/t3lib/config_default.php
+index 8b55ec5..f82cd5b 100644
+--- a/t3lib/config_default.php
++++ b/t3lib/config_default.php
+@@ -736,7 +736,7 @@ define('TYPO3_copyright_year', '1998-2013');
+ 	// Handle $GLOBALS['TYPO3_CONF_VARS']['HTTP']['userAgent']. We can not set the default above
+ 	// because TYPO3_version is not yet defined.
+ if (empty($GLOBALS['TYPO3_CONF_VARS']['HTTP']['userAgent'])) {
+-	$GLOBALS['TYPO3_CONF_VARS']['HTTP']['userAgent'] = 'TYPO3/' . TYPO3_version;
++	$GLOBALS['TYPO3_CONF_VARS']['HTTP']['userAgent'] = 'TYPO3';
+ }
+ define('TYPO3_user_agent', 'User-Agent: '. $GLOBALS['TYPO3_CONF_VARS']['HTTP']['userAgent']);
+ 
+@@ -1139,4 +1139,4 @@ $SIM_EXEC_TIME = $EXEC_TIME;			// $SIM_EXEC_TIME is set to $EXEC_TIME but can be
+ $ACCESS_TIME = $EXEC_TIME - ($EXEC_TIME % 60);		// $ACCESS_TIME is a common time in minutes for access control
+ $SIM_ACCESS_TIME = $ACCESS_TIME;		// if $SIM_EXEC_TIME is changed this value must be set accordingly
+ 
+-?>
+\ No newline at end of file
++?>
