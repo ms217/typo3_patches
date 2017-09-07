@@ -1,0 +1,13 @@
+diff --git a/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php b/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php
+index b203459..a812392 100644
+--- a/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php
++++ b/typo3/sysext/core/Classes/Core/SystemEnvironmentBuilder.php
+@@ -78,7 +78,7 @@ class SystemEnvironmentBuilder {
+ 		// This version, branch and copyright
+ 		define('TYPO3_version', '6.1.13-dev');
+ 		define('TYPO3_branch', '6.1');
+-		define('TYPO3_copyright_year', '1998-2013');
++		define('TYPO3_copyright_year', '1998-' . date('Y'));
+ 
+ 		// TYPO3 external links
+ 		define('TYPO3_URL_GENERAL', 'http://typo3.org/');

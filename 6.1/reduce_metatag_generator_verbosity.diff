@@ -1,0 +1,13 @@
+diff --git a/typo3/sysext/frontend/Classes/Page/PageGenerator.php b/typo3/sysext/frontend/Classes/Page/PageGenerator.php
+index 19e415c..dad39d6 100644
+--- a/typo3/sysext/frontend/Classes/Page/PageGenerator.php
++++ b/typo3/sysext/frontend/Classes/Page/PageGenerator.php
+@@ -675,7 +675,7 @@ class PageGenerator {
+ 		static::generatePageTitle();
+ 		// Add ending slash only to documents rendered as xhtml
+ 		$endingSlash = $GLOBALS['TSFE']->xhtmlVersion ? ' /' : '';
+-		$pageRenderer->addMetaTag('<meta name="generator" content="TYPO3 ' . TYPO3_branch . ' CMS"' . $endingSlash . '>');
++		$pageRenderer->addMetaTag('<meta name="generator" content="TYPO3 CMS"' . $endingSlash . '>');
+ 		$conf = $GLOBALS['TSFE']->pSetup['meta.'];
+ 		if (is_array($conf)) {
+ 			foreach ($conf as $theKey => $theValue) {

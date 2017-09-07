@@ -1,0 +1,20 @@
+diff --git a/typo3/sysext/cms/tslib/class.tslib_pagegen.php b/typo3/sysext/cms/tslib/class.tslib_pagegen.php
+index f995d25..fa81638 100644
+--- a/typo3/sysext/cms/tslib/class.tslib_pagegen.php
++++ b/typo3/sysext/cms/tslib/class.tslib_pagegen.php
+@@ -810,7 +810,7 @@ See <a href="http://wiki.typo3.org/index.php/TYPO3_3.8.1" target="_blank">wiki.t
+ 			// add ending slash only to documents rendered as xhtml
+ 		$endingSlash = $GLOBALS['TSFE']->xhtmlVersion ? ' /' : '';
+ 
+-		$pageRenderer->addMetaTag('<meta name="generator" content="TYPO3 ' . TYPO3_branch . ' CMS"' . $endingSlash . '>');
++		$pageRenderer->addMetaTag('<meta name="generator" content="TYPO3 CMS"' . $endingSlash . '>');
+ 
+ 		$conf = $GLOBALS['TSFE']->pSetup['meta.'];
+ 		if (is_array($conf)) {
+@@ -1212,4 +1212,4 @@ class FE_loadDBGroup extends t3lib_loadDBGroup {
+ 	var $fromTC = 0;	// Means that everything is returned instead of only uid and label-field
+ }
+ 
+-?>
+\ No newline at end of file
++?>

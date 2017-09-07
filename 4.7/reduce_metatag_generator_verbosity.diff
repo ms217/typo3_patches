@@ -1,0 +1,13 @@
+diff --git a/typo3/sysext/cms/tslib/class.tslib_pagegen.php b/typo3/sysext/cms/tslib/class.tslib_pagegen.php
+index e7df454..bad21eb 100644
+--- a/typo3/sysext/cms/tslib/class.tslib_pagegen.php
++++ b/typo3/sysext/cms/tslib/class.tslib_pagegen.php
+@@ -793,7 +793,7 @@ class TSpagegen {
+ 			// add ending slash only to documents rendered as xhtml
+ 		$endingSlash = $GLOBALS['TSFE']->xhtmlVersion ? ' /' : '';
+ 
+-		$pageRenderer->addMetaTag('<meta name="generator" content="TYPO3 ' . TYPO3_branch . ' CMS"' . $endingSlash . '>');
++		$pageRenderer->addMetaTag('<meta name="generator" content="TYPO3 CMS"' . $endingSlash . '>');
+ 
+ 		$conf = $GLOBALS['TSFE']->pSetup['meta.'];
+ 		if (is_array($conf)) {
