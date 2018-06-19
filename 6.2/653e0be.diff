@@ -1,0 +1,55 @@
+diff --git a/typo3/sysext/core/Classes/Utility/GeneralUtility.php b/typo3/sysext/core/Classes/Utility/GeneralUtility.php
+index 476fa78..60ba742 100755
+--- a/typo3/sysext/core/Classes/Utility/GeneralUtility.php
++++ b/typo3/sysext/core/Classes/Utility/GeneralUtility.php
+@@ -1120,7 +1120,11 @@ class GeneralUtility {
+ 		$domain = substr($email, $atPosition + 1);
+ 		$user = substr($email, 0, $atPosition);
+ 		if (!preg_match('/^[a-z0-9.\\-]*$/i', $domain)) {
+-			$domain = self::idnaEncode($domain);
++			try {
++				$domain = self::idnaEncode($domain);
++			} catch (\InvalidArgumentException $exception) {
++				return false;
++			}
+ 		}
+ 		return filter_var($user . '@' . $domain, FILTER_VALIDATE_EMAIL) !== FALSE;
+ 	}
+@@ -1416,9 +1420,13 @@ class GeneralUtility {
+ 			return FALSE;
+ 		}
+ 		if (isset($parsedUrl['host']) && !preg_match('/^[a-z0-9.\\-]*$/i', $parsedUrl['host'])) {
+-			$parsedUrl['host'] = self::idnaEncode($parsedUrl['host']);
++			try {
++				$parsedUrl['host'] = self::idnaEncode($parsedUrl['host']);
++			} catch (\InvalidArgumentException $exception) {
++				return false;
++			}
+ 		}
+-		return filter_var(HttpUtility::buildUrl($parsedUrl), FILTER_VALIDATE_URL) !== FALSE;
++	return filter_var(HttpUtility::buildUrl($parsedUrl), FILTER_VALIDATE_URL) !== FALSE;
+ 	}
+ 
+ 	/*************************
+diff --git a/typo3/sysext/core/Tests/Unit/Utility/GeneralUtilityTest.php b/typo3/sysext/core/Tests/Unit/Utility/GeneralUtilityTest.php
+index 83fe9f1..8ffe284 100644
+--- a/typo3/sysext/core/Tests/Unit/Utility/GeneralUtilityTest.php
++++ b/typo3/sysext/core/Tests/Unit/Utility/GeneralUtilityTest.php
+@@ -988,7 +988,8 @@ class GeneralUtilityTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+ 			'trailing carriage return' => array('test@example.com' . CR),
+ 			'trailing linefeed' => array('test@example.com' . LF),
+ 			'trailing carriage return linefeed' => array('test@example.com' . CRLF),
+-			'trailing tab' => array('test@example.com' . TAB)
++			'trailing tab' => array('test@example.com' . TAB),
++			'prohibited input characters' => array('"mailto:test@example.com"')
+ 		);
+ 	}
+ 
+@@ -1972,6 +1973,7 @@ class GeneralUtilityTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+ 			'string array()' => array('array()'),
+ 			'random string' => array('qwe'),
+ 			'http directory umlauts' => array('http://www.oebb.at/äöü/'),
++			'prohibited input characters' => array('https://{$unresolved_constant}'),
+ 		);
+ 	}
+ 

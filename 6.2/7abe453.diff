@@ -1,0 +1,13 @@
+diff --git a/typo3/sysext/backend/Classes/Controller/PageLayoutController.php b/typo3/sysext/backend/Classes/Controller/PageLayoutController.php
+index cb5183d..268aa91 100644
+--- a/typo3/sysext/backend/Classes/Controller/PageLayoutController.php
++++ b/typo3/sysext/backend/Classes/Controller/PageLayoutController.php
+@@ -374,7 +374,7 @@ class PageLayoutController {
+ 			$contentPage = BackendUtility::getRecord('pages', (int)$this->pageinfo['content_from_pid']);
+ 			$title = BackendUtility::getRecordTitle('pages', $contentPage);
+ 			$linkToPid = $this->local_linkThisScript(array('id' => $this->pageinfo['content_from_pid']));
+-			$link = '<a href="' . htmlspecialchars($linkToPid) . '">' . htmlspecialchars($title) . ' (PID ' . (int)$this->pageinfo['content_from_pid'] . ')</a>';
++			$link = '<a href="' . $linkToPid . '">' . htmlspecialchars($title) . ' (PID ' . (int)$this->pageinfo['content_from_pid'] . ')</a>';
+ 			$flashMessage = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Messaging\\FlashMessage', sprintf($GLOBALS['LANG']->getLL('content_from_pid_title'), $link), '', FlashMessage::INFO);
+ 			$content .= $flashMessage->render();
+ 		}
