@@ -1,0 +1,13 @@
+diff --git a/typo3/sysext/saltedpasswords/Classes/SaltedPasswordService.php b/typo3/sysext/saltedpasswords/Classes/SaltedPasswordService.php
+index ece3a45..27094e8 100644
+--- a/typo3/sysext/saltedpasswords/Classes/SaltedPasswordService.php
++++ b/typo3/sysext/saltedpasswords/Classes/SaltedPasswordService.php
+@@ -118,7 +118,7 @@ class SaltedPasswordService extends \TYPO3\CMS\Sv\AbstractAuthenticationService
+ 			$defaultHashingClassName = \TYPO3\CMS\Saltedpasswords\Utility\SaltedPasswordsUtility::getDefaultSaltingHashingMethod();
+ 			$skip = FALSE;
+ 			// Test for wrong salted hashing method
+-			if ($validPasswd && !(get_class($this->objInstanceSaltedPW) == $defaultHashingClassName) || is_subclass_of($this->objInstanceSaltedPW, $defaultHashingClassName)) {
++			if ($validPasswd && get_class($this->objInstanceSaltedPW) !== $defaultHashingClassName && !is_subclass_of($this->objInstanceSaltedPW, $defaultHashingClassName)) {
+ 				// Instanciate default method class
+ 				$this->objInstanceSaltedPW = \TYPO3\CMS\Saltedpasswords\Salt\SaltFactory::getSaltingInstance(NULL);
+ 				$this->updatePassword((int)$user['uid'], array('password' => $this->objInstanceSaltedPW->getHashedPassword($password)));
