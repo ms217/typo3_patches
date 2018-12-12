@@ -1,0 +1,12 @@
+diff --git a/typo3/sysext/install/Classes/Service/SessionService.php b/typo3/sysext/install/Classes/Service/SessionService.php
+index 0ac2283..766a82b 100644
+--- a/typo3/sysext/install/Classes/Service/SessionService.php
++++ b/typo3/sysext/install/Classes/Service/SessionService.php
+@@ -74,6 +74,7 @@ class SessionService implements \TYPO3\CMS\Core\SingletonInterface {
+ 		session_set_save_handler(array($this, 'open'), array($this, 'close'), array($this, 'read'), array($this, 'write'), array($this, 'destroy'), array($this, 'gc'));
+ 		session_save_path($sessionSavePath);
+ 		session_name($this->cookieName);
++		ini_set('session.cookie_httponly', true);
+ 		ini_set('session.cookie_path', GeneralUtility::getIndpEnv('TYPO3_SITE_PATH'));
+ 		// Always call the garbage collector to clean up stale session files
+ 		ini_set('session.gc_probability', 100);
