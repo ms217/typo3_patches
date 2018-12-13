@@ -1,0 +1,57 @@
+diff --git a/typo3/sysext/install/Resources/Private/Partials/Action/Common/Head.html b/typo3/sysext/install/Resources/Private/Partials/Action/Common/Head.html
+index 6a9598f..0773d61 100644
+--- a/typo3/sysext/install/Resources/Private/Partials/Action/Common/Head.html
++++ b/typo3/sysext/install/Resources/Private/Partials/Action/Common/Head.html
+@@ -1,8 +1,8 @@
+ <div id="t3-install-head">
+    <div id="t3-install-logo">
+-		<h1>TYPO3 CMS {typo3Version}</h1>
++		<h1>TYPO3 CMS</h1>
+ 	</div>
+ 	<div id="t3-install-headline">
+-		<h2>TYPO3 CMS {typo3Version} Install tool on site: {siteName}</h2>
++		<h2>TYPO3 CMS Install tool on site: {siteName}</h2>
+ 	</div>
+-</div>
+\ No newline at end of file
++</div>
+diff --git a/typo3/sysext/install/Resources/Private/Partials/Action/Common/LoginForm.html b/typo3/sysext/install/Resources/Private/Partials/Action/Common/LoginForm.html
+index 23a9c6a..e871e24 100644
+--- a/typo3/sysext/install/Resources/Private/Partials/Action/Common/LoginForm.html
++++ b/typo3/sysext/install/Resources/Private/Partials/Action/Common/LoginForm.html
+@@ -2,7 +2,7 @@
+ 
+ <h1></h1>
+ 
+-<h2>Login to TYPO3 {typo3Version} Install Tool</h2>
++<h2>Login to TYPO3 CMS Install Tool</h2>
+ 
+ <div id="t3-install-box-body">
+ 	<h3>Site: {siteName}</h3>
+@@ -40,4 +40,4 @@
+ 	<br /><br />
+ 	This password gives an attacker full control over your instance if cracked. It should be strong
+ 	(include lower and upper case characters, special characters and numbers) and at least eight characters long.
+-</p>
+\ No newline at end of file
++</p>
+diff --git a/typo3/sysext/install/Resources/Private/Templates/Action/Tool/Welcome.html b/typo3/sysext/install/Resources/Private/Templates/Action/Tool/Welcome.html
+index 3ee395c..a04cc1a 100644
+--- a/typo3/sysext/install/Resources/Private/Templates/Action/Tool/Welcome.html
++++ b/typo3/sysext/install/Resources/Private/Templates/Action/Tool/Welcome.html
+@@ -8,7 +8,7 @@
+ 			<h3>Welcome</h3>
+ 		</f:then>
+ 		<f:else>
+-			<h3>TYPO3 CMS {typo3Version} Install tool on site: {siteName}
++			<h3>TYPO3 CMS Install tool on site: {siteName}
+ 		</f:else>
+ 	</f:if>
+ 
+@@ -163,4 +163,4 @@
+ 		<br />
+ 		This indicates an actual error.
+ 	</p>
+-</f:section>
+\ No newline at end of file
++</f:section>
