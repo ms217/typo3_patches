@@ -1,0 +1,13 @@
+diff --git a/typo3/template.php b/typo3/template.php
+index 902de34..d5cebd4 100644
+--- a/typo3/template.php
++++ b/typo3/template.php
+@@ -1201,7 +1201,7 @@ $str.=$this->docBodyTagBegin().
+ 	 * @return	string		<meta> tag with name "generator"
+ 	 */
+ 	function generator()	{
+-		$str = 'TYPO3 CMS, http://typo3.com, &#169; Kasper Sk&#229;rh&#248;j ' . TYPO3_copyright_year . ', extensions are copyright of their respective owners.';
++		$str = 'TYPO3 '.TYPO3_branch.', http://typo3.com, &#169; Kasper Sk&#229;rh&#248;j ' . TYPO3_copyright_year . ', extensions are copyright of their respective owners.';
+ 		return '<meta name="generator" content="'.$str .'" />';
+ 	}
+ 

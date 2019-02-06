@@ -1,0 +1,18 @@
+diff --git a/typo3/sysext/install/mod/class.tx_install.php b/typo3/sysext/install/mod/class.tx_install.php
+old mode 100755
+new mode 100644
+index ac65e9a..3cb87b0
+--- a/typo3/sysext/install/mod/class.tx_install.php
++++ b/typo3/sysext/install/mod/class.tx_install.php
+@@ -3320,8 +3320,9 @@ REMOTE_ADDR was '".t3lib_div::getIndpEnv('REMOTE_ADDR')."' (".t3lib_div::getIndp
+ 					$databaseNotAvailableMarkers = array(
+ 						'typo3Db' => htmlspecialchars(TYPO3_db),
+ 						'labelNoDatabase' => '
+-							(Can only select database if username/password/host
+-							is correctly set first)
++							(Database cannot be selected. Make sure that username, password and host
++							are set correctly. If MySQL does not allow persistent connections,
++							check that $TYPO3_CONF_VARS[\'SYS\'][\'no_pconnect\'] is set to "1".)
+ 						'
+ 					);
+ 						// Fill the markers in the subpart
