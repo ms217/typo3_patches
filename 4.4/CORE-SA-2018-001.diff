@@ -1,13 +1,13 @@
 diff --git a/typo3/sysext/saltedpasswords/sv1/class.tx_saltedpasswords_sv1.php b/typo3/sysext/saltedpasswords/sv1/class.tx_saltedpasswords_sv1.php
-index b53cf85..3967b39 100644
+index 3967b39..b53cf85 100644
 --- a/typo3/sysext/saltedpasswords/sv1/class.tx_saltedpasswords_sv1.php
 +++ b/typo3/sysext/saltedpasswords/sv1/class.tx_saltedpasswords_sv1.php
 @@ -142,7 +142,7 @@ class tx_saltedpasswords_sv1 extends tx_sv_authbase {
  			$skip = FALSE;
  
  				// test for wrong salted hashing method
--			if ($validPasswd && get_class($this->objInstanceSaltedPW) !== $defaultHashingClassName && !is_subclass_of($this->objInstanceSaltedPW, $defaultHashingClassName)) {
-+			if ($validPasswd && !(get_class($this->objInstanceSaltedPW) == $defaultHashingClassName) || (is_subclass_of($this->objInstanceSaltedPW, $defaultHashingClassName))) {
+-			if ($validPasswd && !(get_class($this->objInstanceSaltedPW) == $defaultHashingClassName) || (is_subclass_of($this->objInstanceSaltedPW, $defaultHashingClassName))) {
++			if ($validPasswd && get_class($this->objInstanceSaltedPW) !== $defaultHashingClassName && !is_subclass_of($this->objInstanceSaltedPW, $defaultHashingClassName)) {
  					// instanciate default method class
  				$this->objInstanceSaltedPW = tx_saltedpasswords_salts_factory::getSaltingInstance(NULL);
  				$this->updatePassword(
@@ -16,5 +16,5 @@ index b53cf85..3967b39 100644
  	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/saltedpasswords/sv1/class.tx_saltedpasswords_sv1.php']);
  }
 -?>
-+?>
 \ No newline at end of file
++?>
