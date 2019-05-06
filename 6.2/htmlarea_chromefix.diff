@@ -1,0 +1,13 @@
+diff --git a/typo3/sysext/rtehtmlarea/htmlarea/htmlarea.js b/typo3/sysext/rtehtmlarea/htmlarea/htmlarea.js
+index 351c0bb..a2ce0f8 100644
+--- a/typo3/sysext/rtehtmlarea/htmlarea/htmlarea.js
++++ b/typo3/sysext/rtehtmlarea/htmlarea/htmlarea.js
+@@ -2184,7 +2184,7 @@ HTMLArea.Editor = Ext.extend(Ext.util.Observable, {
+ 						id: this.editorId + '-iframe',
+ 						tag: 'iframe',
+ 						cls: 'editorIframe',
+-						src: Ext.isGecko ? 'javascript:void(0);' : (Ext.isWebKit ? 'javascript: \'' + HTMLArea.htmlEncode(this.config.documentType + this.config.blankDocument) + '\'' : HTMLArea.editorUrl + 'popups/blank.html')
++						src: Ext.isGecko ? 'javascript:void(0);' : (Ext.isWebKit ? (Ext.isChrome ? 'about:blank;' : 'javascript: \'' + HTMLArea.htmlEncode(this.config.documentType + this.config.blankDocument) + '\'' ): HTMLArea.editorUrl + 'popups/blank.html')
+ 					},
+ 					isNested: this.isNested,
+ 					nestedParentElements: this.nestedParentElements,
